@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            0 词 
+            11k 词 
           </div>
         </div>
         
@@ -293,7 +293,20 @@
         
           <div class="truncate-text">
             
-              
+              React学习总结一、邂逅React开发1. React开发的三个依赖包是什么？分别有什么作用？
+react:包含react所有必须的核心代码
+react-dom：react 渲染在不同平台所需要的核心代码
+babel:将jsx转换为 React 代码的工具
+
+2. React如何封装组件，组件里面包含哪些内容？
+类的方式封装组件
+
+定义一个类（类名大写，组件的名称是必须大写的，小写会被认为是HTML元素），继承自React.Component
+
+.实现当前组件的render函数
+123456789class App extends React.Component&#123;    render()&#123;        return &lt;h2&gt; Hello React&lt;h2/&gt;    &#125;&#125;#渲染根组件const root =ReactDOM.createRoot(document.querySelector(&quot;#r oot&quot;))#使用组件root.render(&lt;App/&gt;)
+
+3. 在进行函数绑定时...
             
           </div>
         

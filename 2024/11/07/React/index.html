@@ -20,18 +20,20 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="456">
+  <meta name="description" content="React学习总结一、邂逅React开发1. React开发的三个依赖包是什么？分别有什么作用？ react:包含react所有必须的核心代码 react-dom：react 渲染在不同平台所需要的核心代码 babel:将jsx转换为 React 代码的工具  2. React如何封装组件，组件里面包含哪些内容？ 类的方式封装组件  定义一个类（类名大写，组件的名称是必须大写的，小写会被认为是HT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React">
 <meta property="og:url" content="http://example.com/2024/11/07/React/index.html">
 <meta property="og:site_name" content="CherrLim &#39;s blog">
-<meta property="og:description" content="456">
+<meta property="og:description" content="React学习总结一、邂逅React开发1. React开发的三个依赖包是什么？分别有什么作用？ react:包含react所有必须的核心代码 react-dom：react 渲染在不同平台所需要的核心代码 babel:将jsx转换为 React 代码的工具  2. React如何封装组件，组件里面包含哪些内容？ 类的方式封装组件  定义一个类（类名大写，组件的名称是必须大写的，小写会被认为是HT">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/11/07/React/Typora-%E6%96%87%E4%BB%B6/Typora%E5%9B%BE%E7%89%87%E4%BD%8D%E7%BD%AE/Snipaste_2022-09-02_15-53-43.png">
 <meta property="article:published_time" content="2024-11-07T07:44:01.000Z">
-<meta property="article:modified_time" content="2024-11-07T07:44:56.071Z">
+<meta property="article:modified_time" content="2024-11-07T11:44:45.357Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/11/07/React/Typora-%E6%96%87%E4%BB%B6/Typora%E5%9B%BE%E7%89%87%E4%BD%8D%E7%BD%AE/Snipaste_2022-09-02_15-53-43.png">
   
     <link rel="alternate" href="/atom.xml" title="CherrLim 's blog" type="application/atom+xml">
   
@@ -286,7 +288,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            0 词 
+            11k 词 
           </div>
         </div>
         
@@ -295,7 +297,372 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          
+          <h1 id="React学习总结"><a href="#React学习总结" class="headerlink" title="React学习总结"></a>React学习总结</h1><h2 id="一、邂逅React开发"><a href="#一、邂逅React开发" class="headerlink" title="一、邂逅React开发"></a>一、邂逅React开发</h2><h3 id="1-React开发的三个依赖包是什么？分别有什么作用？"><a href="#1-React开发的三个依赖包是什么？分别有什么作用？" class="headerlink" title="1. React开发的三个依赖包是什么？分别有什么作用？"></a>1. React开发的三个依赖包是什么？分别有什么作用？</h3><ul>
+<li>react:包含react所有必须的核心代码</li>
+<li>react-dom：react 渲染在不同平台所需要的核心代码</li>
+<li>babel:将jsx转换为 React 代码的工具</li>
+</ul>
+<h3 id="2-React如何封装组件，组件里面包含哪些内容？"><a href="#2-React如何封装组件，组件里面包含哪些内容？" class="headerlink" title="2. React如何封装组件，组件里面包含哪些内容？"></a>2. React如何封装组件，组件里面包含哪些内容？</h3><ul>
+<li><p>类的方式封装组件</p>
+</li>
+<li><p>定义一个类（类名大写，组件的名称是必须大写的，小写会被认为是HTML元素），继承自React.Component</p>
+</li>
+<li><p>.实现当前组件的render函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span>&#123;</span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> &lt;h2&gt; <span class="title class_">Hello</span> <span class="title class_">React</span>&lt;h2/&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">#渲染根组件</span><br><span class="line"><span class="keyword">const</span> root =<span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;#r oot&quot;</span>))</span><br><span class="line">#使用组件</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span>/&gt;</span></span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-在进行函数绑定时，如何进行this关键字的绑定？"><a href="#3-在进行函数绑定时，如何进行this关键字的绑定？" class="headerlink" title="3. 在进行函数绑定时，如何进行this关键字的绑定？"></a>3. 在进行函数绑定时，如何进行this关键字的绑定？</h3><p>方式一：传入函数使用显示绑定（bind、call、apply）</p>
+<ul>
+<li><p>在传入函数时直接绑定this</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">     <span class="keyword">return</span> (</span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;this.state.message&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.btnClick.bind(this)&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">     )</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>方式二：</p>
+<ul>
+<li><p>在类中提前绑定需要使用的函数的this</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">      <span class="comment">// 组件数据</span></span><br><span class="line">      <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>()</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">          <span class="attr">message</span>: <span class="string">&quot;Hello World&quot;</span>,</span><br><span class="line">         </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 对需要绑定的方法, 提前绑定好this</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">btnClick</span> = <span class="variable language_">this</span>.<span class="property">btnClick</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>)</span><br><span class="line">      &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">          <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;this.state.message&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.btnClick&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">        )</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4-React如何进行列表数据的展示？回顾数组的常见高阶函数。"><a href="#4-React如何进行列表数据的展示？回顾数组的常见高阶函数。" class="headerlink" title="4. React如何进行列表数据的展示？回顾数组的常见高阶函数。"></a>4. React如何进行列表数据的展示？回顾数组的常见高阶函数。</h3><ul>
+<li><p>方式一：直接使用for循环 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 1.对movies进行for循环</span></span><br><span class="line">    <span class="keyword">const</span> liEls = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">movies</span>.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> movie = <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">movies</span>[i]</span><br><span class="line">    <span class="keyword">const</span> liEl = <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;movie&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    liEls.<span class="title function_">push</span>(liEl)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>电影列表<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">li</span>&gt;</span> &#123;liEls&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>方式二：map 高阶函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>() </span><br><span class="line">#返回一个新的数组</span><br><span class="line">  <span class="keyword">const</span> liEls = <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">movies</span>.<span class="title function_">map</span>(<span class="function"><span class="params">movie</span> =&gt;</span> <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;movie&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>)</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h2</span>&gt;</span>电影列表<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">li</span>&gt;</span> &#123;liEls&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>方式三： map 高阶函数 表达式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">&#123;<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">movies</span>.<span class="title function_">map</span>(<span class="function"><span class="params">movie</span> =&gt;</span> <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;movie&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>)&#125;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="5-JSX如何绑定数据？如何绑定内容、属性，有哪些规则？"><a href="#5-JSX如何绑定数据？如何绑定内容、属性，有哪些规则？" class="headerlink" title="5. JSX如何绑定数据？如何绑定内容、属性，有哪些规则？"></a>5. JSX如何绑定数据？如何绑定内容、属性，有哪些规则？</h3><ul>
+<li><p>绑定数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Home</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">            <span class="attr">message</span>: <span class="string">&#x27;BNTang&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span>&#123;this.state.message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span>=<span class="string">&#123;this.state.message&#125;</span>&gt;</span>&#123;this.state.message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>绑定class</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Home</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">      <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">          <span class="variable language_">super</span>();</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">              <span class="attr">isActive</span>: <span class="literal">true</span>,</span><br><span class="line">               <span class="attr">objStyle</span>: &#123;<span class="attr">color</span>: <span class="string">&quot;red&quot;</span>, <span class="attr">fontSize</span>: <span class="string">&quot;30px&quot;</span>&#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">       <span class="keyword">const</span> &#123; title, imgURL, href, isActive, objStyle &#125; = <span class="variable language_">this</span>.<span class="property">state</span></span><br><span class="line">      #<span class="number">1.</span><span class="keyword">class</span>绑定的写法一: 字符串的拼接</span><br><span class="line">      <span class="keyword">const</span> className = <span class="string">`abc cba <span class="subst">$&#123;isActive ? <span class="string">&#x27;active&#x27;</span>: <span class="string">&#x27;&#x27;</span>&#125;</span>`</span></span><br><span class="line">      </span><br><span class="line">     # <span class="number">2.</span><span class="keyword">class</span>绑定的写法二: 将所有的<span class="keyword">class</span>放到数组中</span><br><span class="line">      <span class="keyword">const</span> classList = [<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;cba&quot;</span>]</span><br><span class="line">      <span class="keyword">if</span> (isActive) classList.<span class="title function_">push</span>(<span class="string">&quot;active&quot;</span>)</span><br><span class="line">          </span><br><span class="line">     # <span class="number">3.</span><span class="keyword">class</span>绑定的写法三: 第三方库classnames -&gt; npm install classnames</span><br><span class="line">        </span><br><span class="line">          <span class="keyword">return</span> (</span><br><span class="line">              <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                 <span class="tag">&lt;<span class="name">h2</span> <span class="attr">className</span>=<span class="string">&#123;className&#125;</span>&gt;</span>哈哈哈哈<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                 <span class="tag">&lt;<span class="name">h2</span> <span class="attr">className</span>=<span class="string">&#123;classList.join(</span>&quot; &quot;)&#125;&gt;</span>哈哈哈哈<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">          )</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+<li><p>绑定style</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Home</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">       <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">           <span class="variable language_">super</span>();</span><br><span class="line">           <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">               <span class="attr">message</span>: <span class="string">&#x27;BNTang&#x27;</span></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">  </span><br><span class="line">       <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> (</span><br><span class="line">               <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                   <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&#123;&#123;color:</span> &#x27;<span class="attr">red</span>&#x27;, <span class="attr">fontSize:</span> &#x27;<span class="attr">100px</span>&#x27;&#125;&#125;&gt;</span>&#123;this.state.message&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">               <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">           )</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>绑定属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p title=<span class="string">&quot;我是标题&quot;</span>&gt;我是段落&lt;/p&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span>=<span class="string">&#123;message&#125;</span>&gt;</span>我是段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>书写规范</p>
+<ul>
+<li>顶层只有一个根元素</li>
+<li>jsx 的外层需要包裹一个 （） 方便阅读，可以进行换行书写</li>
+<li>jsx的标签可以是单标签，也可以是双标签</li>
+<li>单标签必须以&#x2F;&gt;结尾</li>
+<li>jsx中的注释 { &#x2F;* *&#x2F;}</li>
+<li>JSX嵌入变量作为子元素<ul>
+<li>情况一：当变量是Number、String、Array类型时，可以直接显示</li>
+<li>情况二：当变量是null、undefined、Boolean类型时，内容为空；<br>如果希望可以显示null、undefined、Boolean，那么需要转成字符串；<br>转换的方式有很多，比如toString方法、和空字符串拼接，String(变量)等方式；</li>
+<li>情况三：Object对象类型不能作为子元素（not valid as a React child）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-JSX如何绑定数据？如何绑定内容、属性，有哪些规则？"><a href="#6-JSX如何绑定数据？如何绑定内容、属性，有哪些规则？" class="headerlink" title="6. JSX如何绑定数据？如何绑定内容、属性，有哪些规则？"></a>6. JSX如何绑定数据？如何绑定内容、属性，有哪些规则？</h3><h2 id="二、React的JSX语法解析"><a href="#二、React的JSX语法解析" class="headerlink" title="二、React的JSX语法解析"></a>二、React的JSX语法解析</h2><h3 id="1-JSX绑定事件，this绑定有哪些规则？如何给函数传递参数？"><a href="#1-JSX绑定事件，this绑定有哪些规则？如何给函数传递参数？" class="headerlink" title="1. JSX绑定事件，this绑定有哪些规则？如何给函数传递参数？"></a>1. JSX绑定事件，this绑定有哪些规则？如何给函数传递参数？</h3><ul>
+<li><p>this绑定规则</p>
+<ul>
+<li>普通绑定 - <code>onClick=&#123;this.btnClick&#125;</code> - 在内部是独立函数调用,所以this为undefined</li>
+<li>this绑定方式一: bind绑定 - <code>onClick=&#123;this.btnClick.bind(this)&#125;</code></li>
+<li>this绑定方式二: ES6 class fields - <code>onClick=&#123;this.btnClick&#125;</code> - <code>btnClick = () =&gt; &#123;&#125;</code></li>
+<li>this绑定方式三: 直接传入一个箭头函数 - <code>onClick=&#123;() =&gt; this.btnClick()&#125;</code></li>
+</ul>
+</li>
+<li><p>给函数传递参</p>
+<ul>
+<li>event参数的传递 - <code>onClick=&#123;(event) =&gt; this.btn1Click(event)&#125;</code></li>
+<li>额外参数的传递 - <code>onClick=&#123;(event) =&gt; this.btn2Click(event, &quot;http&quot;, 18)&#125;</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">btn1Click</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(event);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">btn2Click</span>(<span class="params">event, name, age</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(event, name, age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-JSX的代码是如何被编译为React代码的？它的本质是进行什么操作？"><a href="#2-JSX的代码是如何被编译为React代码的？它的本质是进行什么操作？" class="headerlink" title="2. JSX的代码是如何被编译为React代码的？它的本质是进行什么操作？"></a>2. JSX的代码是如何被编译为React代码的？它的本质是进行什么操作？</h3><ul>
+<li>jsx是通过babel工具转换编译成React代码的</li>
+<li>本质<ul>
+<li>jsx 仅仅只是 React.createElement(component, props, …children) 函数的语法糖</li>
+<li>所有的jsx最终都会被转换成React.createElement的函数调用</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-什么是虚拟DOM？虚拟DOM在React中起到什么作用？"><a href="#3-什么是虚拟DOM？虚拟DOM在React中起到什么作用？" class="headerlink" title="3. 什么是虚拟DOM？虚拟DOM在React中起到什么作用？"></a>3. 什么是虚拟DOM？虚拟DOM在React中起到什么作用？</h3><ul>
+<li>什么是虚拟DOM？<ul>
+<li>Virtual DOM 是一种编程概念，UI以一种理想化或者说虚拟化的方式保存在内存中</li>
+<li>Virtual DOM 本质上是 JavaScript 对象，是真实 DOM 的描述，⽤⼀个 JS 对象来描述⼀个 DOM 节点</li>
+<li>我们知道jsx转成React代码的本质是 - 转换成React.createElement的函数调用</li>
+<li>通过React.createElement的函数创建出来的<code>ReactElement</code>对象</li>
+<li>React利用<code>ReactElement</code>对象组成了一个JavaScript的对象树 - JavaScript的对象树就是<strong>虚拟DOM</strong></li>
+</ul>
+</li>
+<li>虚拟DOM在React中的作用<ul>
+<li>虚拟DOM 通过diff算法 - 以最⼩的代价更新变化的视图</li>
+<li>跨平台渲染</li>
+<li>声明式编程 - 虚拟DOM帮助我们从命令式编程转到了声明式编程的模式<ul>
+<li>你只需要告诉React希望让UI是什么状态</li>
+<li>React来确保DOM和这些状态是匹配的</li>
+<li>不需要直接进行DOM操作，就可以从手动更改DOM、属性操作、事件处理中解放出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-分析脚手架创建的React项目目录结构，并且删除文件后自己编写代码"><a href="#4-分析脚手架创建的React项目目录结构，并且删除文件后自己编写代码" class="headerlink" title="4.  分析脚手架创建的React项目目录结构，并且删除文件后自己编写代码"></a>4.  分析脚手架创建的React项目目录结构，并且删除文件后自己编写代码</h3><ul>
+<li>public<ul>
+<li>favicon.ico – 应用程序顶部icon图标</li>
+<li>index.html – 应用的index.html入口文件</li>
+<li>logo192.png – 在manifest.json中被使用</li>
+<li>logo512.png – 在manifest.json中被使用</li>
+<li>manifest.json – 与web app配置相关</li>
+<li>robots.text – 指定搜索引擎可以或者不可以爬取那些信息</li>
+</ul>
+</li>
+<li>src<ul>
+<li>App.css – App组件相关样式</li>
+<li>App.js – App组件代码文件</li>
+<li>App.test.js – App组件的测试代码文件</li>
+<li>index.css – 全局样式文件</li>
+<li>index.js – 整个应用程序的入口文件</li>
+<li>logo.svg – 启动项目时,所看到的React图标</li>
+<li>reportWebVitals.js – 默认帮我们写好的 注册pwa相关的代码</li>
+<li>setupTests.js – 测试初始文件</li>
+</ul>
+</li>
+<li><strong>pwa是什么?</strong> 全称Progressive Web App，即渐进式WEB应用<ul>
+<li>一个 PWA 应用首先是一个网页, 可以通过 Web 技术编写出一个网页应用</li>
+<li>随后添加上 App Manifest 和 Service Worker 来实现 PWA 的安装和离线等功能</li>
+<li>这种Web存在的形式，我们也称之为是 Web App</li>
+<li>pwa可以将网页添加至主屏幕，点击主屏幕图标可以实现启动动画以及隐藏地址栏</li>
+<li>pwa实现离线缓存功能，即使用户手机没有网络，依然可以使用一些离线功能</li>
+<li>pwa实现了消息推送</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、React组件化开发（一）"><a href="#三、React组件化开发（一）" class="headerlink" title="三、React组件化开发（一）"></a>三、React组件化开发（一）</h2><h3 id="1-React组件可以如何进行划分？分别有哪些不同的概念？"><a href="#1-React组件可以如何进行划分？分别有哪些不同的概念？" class="headerlink" title="1. React组件可以如何进行划分？分别有哪些不同的概念？"></a>1. React组件可以如何进行划分？分别有哪些不同的概念？</h3><ul>
+<li><p>根据定义方式</p>
+<ul>
+<li>函数组件</li>
+<li>类组件</li>
+</ul>
+</li>
+<li><p>根据组件内部有无状态需要维护</p>
+<ul>
+<li>无状态组件</li>
+<li>有状态组件</li>
+</ul>
+</li>
+<li><p>根据组件的不同职责</p>
+<ul>
+<li>展示型组件</li>
+<li>容器型组件</li>
+</ul>
+</li>
+<li><p>关注UI的展示</p>
+<ul>
+<li>函数组件,无状态组件,展示型组件</li>
+</ul>
+</li>
+<li><p>关注数据逻辑的展示</p>
+<ul>
+<li>类组件,有状态组件,容器型组件</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-React重要的组件生命周期有哪些？分别列出他们的作用。"><a href="#2-React重要的组件生命周期有哪些？分别列出他们的作用。" class="headerlink" title="2. React重要的组件生命周期有哪些？分别列出他们的作用。"></a>2. React重要的组件生命周期有哪些？分别列出他们的作用。</h3><ul>
+<li>componentDidMount<ul>
+<li>会在组件挂载后立即调用</li>
+<li>操作DOM</li>
+<li>发送网络请求</li>
+</ul>
+</li>
+<li>componentDidUpdate<ul>
+<li>会在组件更新后立即调用</li>
+<li>首次渲染不会执行此方法</li>
+<li>可以在组件更新后操作DOM</li>
+</ul>
+</li>
+<li>conponentWillUnmount<ul>
+<li>会在组件卸载及销毁前调用</li>
+<li>清除定时器</li>
+<li>清除事件监听</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-React中如何实现组件间的通信？父传子？子传父？"><a href="#3-React中如何实现组件间的通信？父传子？子传父？" class="headerlink" title="3. React中如何实现组件间的通信？父传子？子传父？"></a>3. React中如何实现组件间的通信？父传子？子传父？</h3><ul>
+<li>父传子<ul>
+<li>在子组件通过属性传递内容</li>
+<li>子组件通过props拿到内容</li>
+</ul>
+</li>
+<li>子传父<ul>
+<li>通过传递函数,调用回调函数</li>
+<li>通过函数的参数传递要传递的数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-React中有插槽的概念吗？如果没有，如何实现插槽的效果呢？"><a href="#4-React中有插槽的概念吗？如果没有，如何实现插槽的效果呢？" class="headerlink" title="4. React中有插槽的概念吗？如果没有，如何实现插槽的效果呢？"></a>4. React中有插槽的概念吗？如果没有，如何实现插槽的效果呢？</h3><ul>
+<li>没有插槽的概念</li>
+<li>实现插槽效果的方式<ul>
+<li>直接在组件中插入children</li>
+<li>在目标组件拿到插入的内容进行展示</li>
+</ul>
+</li>
+<li>通过props直接将要展示的内容传递给子组件<ul>
+<li>子组件通过props直接拿到要展示的内容</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-非父子组件的通信有哪些方式？分别是什么作用？"><a href="#5-非父子组件的通信有哪些方式？分别是什么作用？" class="headerlink" title="5. 非父子组件的通信有哪些方式？分别是什么作用？"></a>5. 非父子组件的通信有哪些方式？分别是什么作用？</h3><ul>
+<li>事件总线</li>
+<li>使用context<ul>
+<li>创建context</li>
+<li>在要使用的组件,一般是根组件导入context</li>
+<li>使用&lt;context.Provider&gt;包裹后代组件</li>
+<li>在要使用的后代组件引入context<ul>
+<li>xxxx.contextType &#x3D; context</li>
+<li>在render方法中可以通过this.context拿到传递过来的值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-面试题：React的setState是同步的还是异步的？React18中是怎么样的？"><a href="#6-面试题：React的setState是同步的还是异步的？React18中是怎么样的？" class="headerlink" title="6. 面试题：React的setState是同步的还是异步的？React18中是怎么样的？"></a>6. 面试题：React的setState是同步的还是异步的？React18中是怎么样的？</h3><h2 id="四、React组件化开发（二）"><a href="#四、React组件化开发（二）" class="headerlink" title="四、React组件化开发（二）"></a>四、React组件化开发（二）</h2><h3 id="1-非父子组件的通信有哪些方式？分别是什么作用？"><a href="#1-非父子组件的通信有哪些方式？分别是什么作用？" class="headerlink" title="1. 非父子组件的通信有哪些方式？分别是什么作用？"></a>1. 非父子组件的通信有哪些方式？分别是什么作用？</h3><ul>
+<li>Context<ul>
+<li>1.创建Context</li>
+<li>2.使用&lt;context.Provider&gt;包裹后代组件</li>
+<li>3.在要使用的后代xxxx组件引入context<ul>
+<li>xxxx.contextType &#x3D; context</li>
+<li>在render方法中可以通过this.context拿到传递过来的值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>事件总线EventBus</li>
+</ul>
+<ul>
+<li>Redux</li>
+</ul>
+<h3 id="2-面试题：React的setState是同步的还是异步的？React18中是怎么样的？"><a href="#2-面试题：React的setState是同步的还是异步的？React18中是怎么样的？" class="headerlink" title="2. 面试题：React的setState是同步的还是异步的？React18中是怎么样的？"></a>2. 面试题：React的setState是同步的还是异步的？React18中是怎么样的？</h3><ul>
+<li><p>在 React 中，可变状态通常保存在组件的 state 属性中，并且只能通过使用 setState()来更新</p>
+</li>
+<li><p>React的setState是异步的 – 不要指望在调用 <code>setState</code> 之后，<code>this.state</code> 会立即映射为新的值</p>
+</li>
+<li><p>在react18之前, 在setTimeout,Promise等中操作setState, 是同步操作</p>
+</li>
+<li><p>在react18之后, 在setTimeout,Promise等中操作setState,是异步操作(批处理)</p>
+<ul>
+<li>如果需要同步的处理怎么办呢? 需要执行特殊的<code>flushSync</code>操作</li>
+</ul>
+</li>
+<li><p>为什么要将setState设计成异步的</p>
+<ul>
+<li>首先,若是将setState设计成同步的,在<code>componentDidMount</code>中请求多个网络请求时,会堵塞后面的网络请求</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 网络请求一 : this.setState</span></span><br><span class="line">  <span class="comment">// 网络请求二 : this.setState</span></span><br><span class="line">  <span class="comment">// 网络请求三 : this.setState</span></span><br><span class="line">  <span class="comment">// 如果this.setState设计成同步的,会堵塞后面的网络请求</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>一. setState设计为异步，可以显著的提升性能</p>
+<ul>
+<li>如果每次调用 setState都进行一次更新，那么意味着render函数会被频繁调用，界面重新渲染，这样效率是很低的</li>
+<li>最好的办法应该是<strong>获取到多个更新，之后进行批量更新</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在一个函数中有多个setState时,</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;&#125;) --&gt; 先不会更新,而是会加入到队列(queue)中 (先进先出)</span><br><span class="line"><span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;&#125;) --&gt; 也加入到队列中</span><br><span class="line"><span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;&#125;) --&gt; 也加入到队列中</span><br><span class="line"><span class="comment">// 这里的三个setState会被合并到队列中去</span></span><br><span class="line"><span class="comment">// 在源码内部是通过do...while从队列中取出依次执行的</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>二: 如果同步更新了state，但是还没有执行render函数，那么state和props不能保持同步</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-什么是SCU优化？类组件和函数组件分别如何进行SCU的优化？"><a href="#3-什么是SCU优化？类组件和函数组件分别如何进行SCU的优化？" class="headerlink" title="3. 什么是SCU优化？类组件和函数组件分别如何进行SCU的优化？"></a>3. 什么是SCU优化？类组件和函数组件分别如何进行SCU的优化？</h3><ul>
+<li><p><strong>shouldComponentUpdate – SCU</strong> – React提供给我们的声明周期方法</p>
+</li>
+<li><p>SCU优化就是 一种巧妙的技术,用来减少DOM操作次数,具体为当React元素没有更新时,不会去调用render()方法</p>
+</li>
+<li><p>可以通过<code>shouldComponentUpdate</code>来判断<code>this.state</code>中的值是否改变</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">shouldComponentUpdate</span>(<span class="params">nextProps, nextState</span>) &#123;</span><br><span class="line">   <span class="keyword">const</span> &#123;message, counter&#125; = <span class="variable language_">this</span>.<span class="property">state</span></span><br><span class="line">   <span class="keyword">if</span>(message !== nextState.<span class="property">message</span> || counter !== nextState.<span class="property">counter</span>) &#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">false</span> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>React已经帮我们提供好SCU优化的操作</p>
+<ul>
+<li>类组件: 将class继承自<code>PureComponent</code></li>
+<li>函数组件: 使用一个高阶组件<code>memo</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;mome&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">HomeFunc</span> = <span class="title function_">mome</span>(<span class="keyword">function</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;函数式组件&quot;</span>)</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>函数式组件: &#123;props.message&#125;<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">HomeFunc</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="5-React为什么要强调不可变的力量？如何实现不可变的力量？"><a href="#5-React为什么要强调不可变的力量？如何实现不可变的力量？" class="headerlink" title="5. React为什么要强调不可变的力量？如何实现不可变的力量？"></a>5. React为什么要强调不可变的力量？如何实现不可变的力量？</h3><ul>
+<li>不可变的力量: 不要直接去修改this.state中的值(主要指对象),若是想修改的话,应该是将这整个值全部修改掉<ul>
+<li>注意: 值类型,在修改的时候,本身就全部替换掉了,所以不需要其他操作,直接改就可以</li>
+</ul>
+</li>
+<li>实现: 将对象浅拷贝赋值给一个新的变量,在将这个新的变量赋值给this.state中的值</li>
+</ul>
+<h3 id="6-React中获取DOM的方式有哪些？"><a href="#6-React中获取DOM的方式有哪些？" class="headerlink" title="6. React中获取DOM的方式有哪些？"></a>6. React中获取DOM的方式有哪些？</h3><ul>
+<li><p>ref获取DOM</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">getDOM</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="comment">// 方式一: 在react元素上绑定ref字符串 - 这种方式react已经不推荐了</span></span><br><span class="line"><span class="comment">// console.log(this.refs.http)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式二: 提前创建好ref对象, createRef(), 将创建出来的对象绑定到元素(推荐)</span></span><br><span class="line"><span class="comment">// console.log(this.titleRef.current)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 方式三: 传入一个回调函数, 在对应的元素被渲染之后, 回调函数被执行, 并且将元素传入(16.3之前的版本)</span></span><br><span class="line"><span class="comment">// console.log(this.titleEl)</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;h3 ref=<span class="string">&quot;http&quot;</span>&gt;大大怪将军&lt;/h3&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">h3</span> <span class="attr">ref</span>=<span class="string">&#123;this.titleRef&#125;</span>&gt;</span>小小怪下士<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">h3</span> <span class="attr">ref</span>=<span class="string">&#123;el</span> =&gt;</span> this.titleEl = el&#125;&gt;瑞克<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.getDOM()&#125;&gt;获取DOM<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ref获取组件实例 – <code>createRef</code></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="title class_">PureComponent</span>, createRef &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>()</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;&#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">HWRef</span> = <span class="title function_">createRef</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">getComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">HWRef</span>.<span class="property">current</span>)</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">HWRef</span>.<span class="property">current</span>.<span class="title function_">test</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="title class_">HelloWorld</span> ref=&#123;<span class="variable language_">this</span>.<span class="property">HWRef</span>&#125; /&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.getComponent()&#125;&gt;获取组件实例<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ref获取函数组件 – 函数式组件是没有实例的，所以无法通过ref获取他们的实例 – <code>React.forwardRef</code></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="title class_">PureComponent</span>, createRef, forwardRef &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">HelloWorld</span> = <span class="title function_">forwardRef</span>(<span class="keyword">function</span>(<span class="params">props, ref</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h2</span> <span class="attr">ref</span>=<span class="string">&#123;ref&#125;</span>&gt;</span>函数组件<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h4</span>&gt;</span>大大怪将军<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br><span class="line"><span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>()</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;&#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">HWRef</span> = <span class="title function_">createRef</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">getComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">HWRef</span>.<span class="property">current</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">HelloWorld</span> <span class="attr">ref</span>=<span class="string">&#123;this.HWRef&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.getComponent()&#125;&gt;获取DOM<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="7-性能优化-React的diff算法和key的作用"><a href="#7-性能优化-React的diff算法和key的作用" class="headerlink" title="7. 性能优化:React的diff算法和key的作用"></a>7. 性能优化:React的diff算法和key的作用</h3><ul>
+<li><p>React的渲染流程</p>
+<ul>
+<li>在render函数中返回jsx, jsx会创建出<code>ReactElement</code>对象(通过React.createElement的函数创建出来的)</li>
+<li><code>ReactElement</code>最终会形成一颗树结构, 这颗树结构就是vDOM</li>
+<li>React会根据这样的vDOM渲染出真实DOM</li>
+</ul>
+</li>
+<li><p>React更新流程</p>
+<ul>
+<li>props&#x2F;state发生改变</li>
+<li>render函数重新执行</li>
+<li>产生新的DOM树结构</li>
+<li>新旧DOM树 进行diff算法</li>
+<li>计算出差异进行更新</li>
+<li>最后更新到真实DOM</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">什么是diff算法?</span><br><span class="line">    diff算法并非<span class="title class_">React</span>独家首创,但是<span class="title class_">React</span>针对diff算法做了自己的优化,使得时间复杂度优化成了<span class="title function_">O</span>(n)</span><br><span class="line">对比两颗树结构,然后帮助我们计算出vDOM中真正变化的部分,并只针对该部分进行实际的<span class="variable constant_">DOM</span>操作,而非渲染整个页面,从而保证了每次操作后页面的高效渲染。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>React在props或state发生改变时，会调用React的render方法，会创建一颗不同的树</p>
+</li>
+<li><p>React需要基于这两颗不同的树之间的差别来判断如何有效的更新UI</p>
+</li>
+<li><p>如果一棵树参考另外一棵树进行完全比较更新，那么即使是最先进的算法，该算法的**复杂程度为 O(n³)**，其中 n 是树中元素的数量</p>
+</li>
+<li><p>如果在 React 中使用了该算法，那么展示 1000 个元素所需要执行的计算量将在十亿的量级范围</p>
+</li>
+<li><p>这个开销太过昂贵了，于是，React对这个算法进行了优化，<strong>将其优化成了O(n)</strong></p>
+<ul>
+<li><p>同层节点之间相互比较，不会垮节点比较(一旦某个节点不同,那么包括其后代节点都会被替换)</p>
+<p><img src="/2024/11/07/React/Typora-文件\Typora图片位置\Snipaste_2022-09-02_15-53-43.png" alt="Snipaste_2022-09-02_15-53-43"></p>
+</li>
+<li><p>不同类型的节点，产生不同的树结构(当根节点为不同类型的元素时，React 会拆卸原有的树并且建立起新的树)</p>
+</li>
+<li><p>开发中，可以通过key属性标识哪些子元素在不同的渲染中可能是不变的</p>
+</li>
+</ul>
+</li>
+<li><p>在遍历列表时，总是会提示一个警告，让我们加入一个key属性，当子元素拥有 key 时，React 使用 key 来匹配原有树上的子元素以及最新树上的子元素。</p>
+<ul>
+<li>在最后位置插入数据 – 这种情况，有无key意义并不大</li>
+<li>在前面插入数据 – 这种做法，在没有key的情况下，所有的li都需要进行修改</li>
+<li>在中间插入元素 – 新增2014, key为2016元素仅仅进行位移，不需要进行任何的修改</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&quot;2015&quot;</span>&gt;</span>Duke<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&quot;2016&quot;</span>&gt;</span>Villanova<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&quot;2015&quot;</span>&gt;</span>Duke<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&quot;2014&quot;</span>&gt;</span>Connecticut<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&quot;2016&quot;</span>&gt;</span>Villanova<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
         
       </div>
 
